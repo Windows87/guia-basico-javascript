@@ -28,7 +28,13 @@ O guia aborda os seguintes assuntos:
 		- [Operadores de Comparação](#operadores-de-comparacao)
 		- [Operadores Lógicos](#operadores-logicos)
 	- [For, While e forEach](#for-while-e-foreach)
-- Manipulação do DOM
+- [Manipulação do DOM](#manipulacao-do-dom)
+	- [Modificar Elementos](#modificar-elementos)
+		- [Modificar o Texto e o HTML](#modificar-o-texto-e-o-html)
+		- [Modificar o Estilo do Elemento](#modificar-o-estilo-do-elemento)
+		- [Modificar todos os Elementos de uma Classe ou Tag](#modificar-todos-os-elementos-de-uma-classe-ou-tag)
+		- [Modificar outros Valores do Elemento](#modificar-outros-valores-do-elemento)
+	- [Criar Elementos](#criar-elementos)
 - setInterval e setTimeout
 - Eventos
 - Requisições HTTP (Ajax)
@@ -280,3 +286,160 @@ array.forEach(letra => {
 
 O `for` e o `while` tem saídas iguais, dando um output de 0 a 9. O `forEach` imprime todos os valores do array no console.
 {: style="text-align: justify"}
+
+## Manipulação do DOM
+Até agora foi passado apenas os fundamentos do Javascript. A parte interessante do Javascript é manipular o DOM, ou seja, manipular os elementos da página.
+{: style="text-align: justify"}
+
+Com o Javascript é possível modificar o texto e o HTML de elementos, modificar o estilo de um elemento, modificar o source de uma imagem, modificar as classes de um elemento ou criar um novo elemento pelo código. Ou seja, é possível modificar todas as propriedades da página.
+{: style="text-align: justify"}
+
+### Modificar Elementos
+
+#### Modificar o Texto e o HTML
+Primeiramente, para modificar um elemento, é necessário selecionar o elemento que você quer modificar e guardar em uma variável. Utilizamos a função `document.querySelector()` para selecionar apenas um elemento utilizando seletores CSS. Por exemplo, para pegar um elemento com o id `elemento`, seria usado `document.querySelector('#elemento')`, mas se fosse uma classe, seria utilizado `document.querySelector('.elemento')`. Mas como classes podem ser usadas em mais de um elemento, o querySelector retornaria apenas o primeiro elemento encontrado com essa classe.
+{: style="text-align: justify"}
+
+Para modificar o texto, se utiliza a propriedade `innerText` do elemento. Exemplo de modificação de texto de uma `div`:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<div id="elemento">
+</div>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const elemento = document.querySelector('#elemento');
+elemento.innerText = 'Hello World!';
+```
+
+Como pode ser visto, apareceu a palavra "Hello World" na página. Mas caso quisessemos mostrar o "Hello World" como elemento `h1`, podemos utilizar o `innerHTML` para modificar todo o HTML dentro do elemento.
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<div id="elemento-2">
+</div>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const elemento2 = document.querySelector('#elemento-2');
+elemento2.innerHTML = '<h1>Hello World!</h1>';
+```
+
+**Resultado**:
+{: style="text-align: justify"}
+
+<kbd>
+  <img src="imagens/manipulacao-helloworld.png" width="100%">
+</kbd>
+
+#### Modificar o Estilo do Elemento
+Para modificar o estilo, você pode utilizar a propriedade `elemento.style['nomeDaPropriedadeCSS'] = 'valorDaPrpriedade';`. Para modificar a cor de um parágrafo, seria usado esses códigos:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<p id="elemento-3">
+  lorem ipsum dolor sit amet
+</p>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const elemento3 = document.querySelector('#elemento-3');
+elemento3.style['color'] = 'red';
+```
+
+**Resultado**:
+{: style="text-align: justify"}
+
+<kbd>
+  <img src="imagens/manipulacao-css.png" width="100%">
+</kbd>
+
+Também é possível adicionar uma classe utilizando a função `elemento.classList.add('nomeDaClasse');` para editar o CSS.
+{: style="text-align: justify"}
+
+#### Modificar todos os Elementos de uma Classe ou Tag
+A função `document.querySelectorAll('nomeDaClasseOuTag')` seleciona todos os elementos de uma classe ou tag e retorna um array, então, para modificar todos os elementos é necessário modificar os elementos um por um. Por isso pode ser utilizado o `forEach` mostrado acima. Exemplo:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<p class="classe">a</p>
+<p class="classe">b</p>
+<p class="classe">c</p>
+<p class="classe">d</p>
+<p class="classe">e</p>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const elementos = document.querySelectorAll('.classe');
+
+elementos.forEach(elemento => {
+  elemento.style['color'] = 'green';
+});
+```
+
+**Resultado**:
+{: style="text-align: justify"}
+
+<kbd>
+  <img src="imagens/manipulacao-elementos.png" width="100%">
+</kbd>
+
+#### Modificar outros Valores do Elemento
+Como dito, é possível modificar outros valores do elemento, como a source de uma imagem: `img.src = 'linkDaImagem'` ou o valor de um input: `input.value = 'valorDoInput'`.
+{: style="text-align: justify"}
+
+### Criar Elementos
+Mas modificar elementos é muito limitado. Por isso, é possível criar elementos por meio do javascript utilizando a função `novoElemento = document.createElement('tipoDeElemento')`, mas para o elemento aparecer na página é necessário adicionar dentro de um elemento pai com a função `elementoPai.appendChild(novoElemento)`. Exemplo:
+{: style="text-align: justify"}
+
+```javascript
+const novoElemento = document.createElement('div');
+const body = document.querySelector('body');
+
+novoElemento.innerText = 'novo elemento';
+
+body.appendChild(novoElemento);
+```
+
+O exemplo mostra a criação de um novo elemento, a seleção do elemento pai, que no caso é o elemento `body`, a modificação do texto do novo elemento e a adição dele no `body`. Todos os elementos podem serem criados, como `img` e `p`.
+{: style="text-align: justify"}
+
+Resultado:
+{: style="text-align: justify"}
+
+<kbd>
+  <img src="imagens/criacao-elemento.png" width="100%">
+</kbd>
