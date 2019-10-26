@@ -39,7 +39,9 @@ O guia aborda os seguintes assuntos:
 - [setInterval e setTimeout](#setinterval-e-settimeout)
 	- [setInterval](#setinterval)
 	- [setTimeout](#settimeout)
-- Eventos
+- [Eventos](#eventos)
+	- [onClick](#onclick)
+	- [onSubmit](#onsubmit)
 - Requisições HTTP (Ajax)
 - LocalStorage
 - O que é Node, React, Electron e Outros
@@ -535,3 +537,67 @@ function criarElemento() {
 
 setTimeout(criarElemento, 5000);
 ```
+
+## Eventos
+Eventos são funções que são executadas ao por exemplo, clicar em um elemento, submeter um formulário, entre outros. Para declarar um evento, é usada a função `elemento.addEventListener('evento', funcaoQueOcorrera)`;
+{: style="text-align: justify"}
+
+### onClick
+O onClick é um evento que pode ser utilizado em todos os elementos. Ele é executado quando o usuário clica no elemento. Exemplo de função de onClick:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<button id="botao">Clique Aqui</button>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const botao = document.querySelector('#botao');
+
+function abrirAlerta() {
+  alert('Olá!');
+}
+
+botao.addEventListener('click', abrirAlerta);
+```
+
+### onSubmit
+O onSubmit é um evento que pode ser utilizado em formulários, que quando esse formulário é submetido, o evento é disparado. Para a página não dar um refresh, é necessário pegar a variável `event` na função e usar a função `event.preventDefault()`. Exemplo:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<form id="formulario">
+  <input type="text" id="texto">
+  <input type="submit" value="Submeter">
+</form>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const form = document.querySelector('#formulario');
+
+function mostrarTexto(evento) {
+  evento.preventDefault();
+  const texto = document.querySelector('#texto');
+  alert(texto.value);
+}
+
+form.addEventListener('submit', mostrarTexto);
+```
+
+O código acima, ao submeter o formuĺário (clicando no botão de submeter ou dando enter no input), irá mostrar o valor do input.
+{: style="text-align: justify"}
