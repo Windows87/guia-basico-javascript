@@ -23,7 +23,11 @@ O guia aborda os seguintes assuntos:
 - [Variáveis, Objetos e Funções](#variaveis-objetos-e-funcoes)
 	- [Variáveis](#variaveis)
 	- [Objetos e Arrays](#objetos-e-arrays)
-- If, else, for, while e forEach
+- [If, else, for, while e forEach](#if-else-for-while-foreach)
+	- [If e Else](#if-e-else)
+		- [Operadores de Comparação](#operadores-de-comparacao)
+		- [Operadores Lógicos](#operadores-logicos)
+	- [For, While e forEach](#for-while-e-foreach)
 - Manipulação do DOM
 - setInterval e setTimeout
 - Eventos
@@ -56,6 +60,7 @@ Também é possível utilizar códigos javascript sem a necessidade de importar 
   ------>
   <script type="text/javascript">
     // Código Javascript
+    // Isso é um comentário
   </script>
 </body>
 ```
@@ -153,4 +158,125 @@ console.log(alfabeto);
 
 Tente declarar novas variáveis, objetos e arrays e procurar e utilizar novas funções de Arrays por meio da documentação do Javascript, como de remover o último elemento da lista ou cortar parte do array:
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array.
+{: style="text-align: justify"}
+
+## If, else, for, while e forEach
+Os comandos de seleção e laços de repetição do Javascript são semelhantes aos de outras linguagens, como C/C++ e Java. 
+{: style="text-align: justify"}
+
+### If e Else
+O `if` e `else`, igual ao C++, quando apresenta apenas uma linha, não é necessário utilizar das chaves, como no exemplo:
+{: style="text-align: justify"}
+
+```javascript
+const x = 10;
+
+if(x > 10)
+  console.log('Maior que 10');
+else if (x == 10)
+  console.log('Igual a 10');
+else
+  console.log('Menor que 10');
+```
+
+O `else if` no código é o mesmo que o `else if` do C++. se o primeiro `if` estiver errado, seguirá até os outros `else if`s até um funcionar e parar a seleção. Se nenhum funcionar, entrará no `else`.
+
+Mas quando é necessário um bloco de código, é necessário utilizar chaves, como no exemplo:
+{: style="text-align: justify"}
+
+```javascript
+const senha = 'abc123';
+
+if(senha === 'abc123') {
+  console.log('Senha Correta!');
+  console.log('Entrando no Sistema..');
+} else {
+  console.log('Senha Inválida.');
+}
+```
+
+#### Operadores de Comparação
+Segue uma tabela de operadores de comparação, como igual, maior ou igual igual aos do C++.
+{: style="text-align: justify"}
+
+| Operador     | Nome                   |
+|--------------|------------------------|
+| `==`         | Igual                  |
+| `!=`         | Diferente              |
+| `===`        | Igual Estritamente     |
+| `!==`        | Diferente Estritamente |
+| `>`          | Maior que              |
+| `>=`         | Maior ou igual que     |
+| `<`          | Menor que              |
+| `<=`         | Menor ou igual que     |
+
+A diferença do Igual e Igual Estritamente é que o Igual não compara tipos, ou seja, `3 == "3"` dá `true`, mas o Igual Estritamente daria `false`, mas daria `true` com a comparação `3 === 3`. Exemplos:
+{: style="text-align: justify"}
+
+```javascript
+const a = 10;
+const b = '10';
+const c = 20;
+
+console.log(a == b); // true
+console.log(a === b); // false
+
+console.log(a != b); // false
+console.log(a !== b); // true
+
+console.log(a > c); // false
+console.log(a < c); // true
+console.log(a >= b); // true
+```
+
+#### Operadores Lógicos
+Segue uma tabela de operadores lógicos, iguais ao do C++.
+{: style="text-align: justify"}
+
+| Operador     | Nome     |
+|--------------|----------|
+| `&&`         | e        |
+| `||`         | ou       |
+| `!`          | inversor |
+
+Exemplos:
+{: style="text-align: justify"}
+
+```javascript
+const y = 10;
+const z = 20;
+const p = true;
+
+console.log(y === 10 && z > 10); // true
+console.log(y === 10 && z < 10); // false
+
+console.log(y === 10 || z > 10); // true
+console.log(y === 10 || z < 10); // true
+
+console.log(!p); // false
+console.log(!!p); // true
+```
+
+### For, While e ForEach
+Os laços de repetição são também iguais do C++, o novo é o `forEach`, que é uma função nova dos arrays, junto com o `map` e `filter`. Exemplos:
+{: style="text-align: justify"}
+
+```javascript
+for(let i = 0; i < 10; i++)
+  console.log(`Numero ${i}`);
+
+let i = 0;
+while(i < 10) {
+  console.log(`Numero ${i}`);
+  i++;
+}
+
+let array = ['a', 'b', 'c', 'd', 'e'];
+
+array.forEach(letra => {
+  console.log(letra);
+});
+```
+
+O `for` e o `while` tem saídas iguais, dando um output de 0 a 9. O `forEach` imprime todos os valores do array no console.
 {: style="text-align: justify"}
