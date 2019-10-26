@@ -42,8 +42,7 @@ O guia aborda os seguintes assuntos:
 - [Eventos](#eventos)
 	- [onClick](#onclick)
 	- [onSubmit](#onsubmit)
-- Requisições HTTP (Ajax)
-- LocalStorage
+- [Requisições HTTP (Ajax)](#requisicoes-http-ajax)
 - O que é Node, React, Electron e Outros
 {: style="text-align: justify"}
 
@@ -600,4 +599,56 @@ form.addEventListener('submit', mostrarTexto);
 ```
 
 O código acima, ao submeter o formuĺário (clicando no botão de submeter ou dando enter no input), irá mostrar o valor do input.
+{: style="text-align: justify"}
+
+## Requisições HTTP (Ajax)
+Requisição HTTP é fazer uma chamada a um website e pode receber um valor em texto ou em forma de um objeto (json). Iremos usar uma API, que é um website que você envia por exemplo, uma informação para o website e ele retornará informações brutas.
+{: style="text-align: justify"}
+
+Será usada uma API de CEP gratuita (https://postmon.com.br/) que será passada um CEP pela url e será retornada informações sobre esse CEP. Para descobrir como se deve usar uma API, deve-se ler a documentação da API.
+{: style="text-align: justify"}
+
+A função usada para requisição será o `fetch`, que deve estar dentro de uma função assíncrona, que deve ter o comando `async` na frente da `function` e `await` na frente da função `fetch`. Códigos de uma simples aplicação fazendo a requisição obtendo os dados do CEP, mostrando os dados no console e o nome da cidade na página:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<form id="formulario">
+  <input type="text" id="cep">
+  <input type="submit" value="Procurar">
+</form>
+
+<p id="cidade"></p>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+const form = document.querySelector('#formulario');
+
+async function procurarCEP(evento) {
+  evento.preventDefault();
+  
+  const cep = document.querySelector('#cep').value;
+  const cidade = document.querySelector('#cidade');
+  
+  try {
+  	const chamadaHttp = await fetch(`https://api.postmon.com.br/v1/cep/${cep}`);
+  	const dados = await chamadaHttp.json();
+  	console.log(dados);
+  	cidade.innerText = dados.cidade;
+  } catch(error) {
+  	alert('Erro');
+  }
+}
+
+form.addEventListener('submit', procurarCEP);
+```
+
+Como pode ser visto, utilizou os comandos `try` e `catch`, ele é utilizado caso o usuário não tenha internet ou dê um erro, irá parar o código do `try` e ir pro bloco de código do `catch`. Outra coisa que pode ser observada é o `chamadaHttp.json()`, nela, é retornada um objeto, caso fosse `chamadaHttp.text()`, seria retornado o valor em string.
 {: style="text-align: justify"}
