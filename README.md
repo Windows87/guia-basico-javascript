@@ -20,7 +20,9 @@ O guia aborda os seguintes assuntos:
 
 - [Utilizar Javascript no HTML](#utilizar-javascript-no-html)
 - [Console e Debug](#console-e-debug)
-- Variáveis, Objetos e Funções
+- [Variáveis, Objetos e Funções](#variaveis-objetos-e-funcoes)
+	- [Variáveis](#variaveis)
+	- [Objetos e Arrays](#objetos-e-arrays)
 - If, else, for, while e forEach
 - Manipulação do DOM
 - setInterval e setTimeout
@@ -81,3 +83,74 @@ Esse código mostra uma mensagem no console. Isso pode ser útil para tentar res
 
 Tente trocar o texto do console ou adicionar mais textos para visualizar dentro do console.
 {: style="text-align: justify"} 
+
+## Variáveis, Objetos e Funções
+
+### Variáveis
+Diferente de outras linguagens, o Javascript apresenta apenas dois tipos de variáveis, o tipo `const`, que é uma variável constante, ou seja, seu valor não pode mudar, e o tipo `let`, que é uma variável que o valor pode ser modificado. Não é necessário escrever o tipo da variável (string, int) como no C++ ou Java. Exemplo:
+{: style="text-align: justify"}
+
+```javascript
+const x = "O valor é de";
+let y = 10;
+
+console.log(x);
+console.log(y);
+
+y = 20;
+
+console.log(y);
+```
+
+Ao atualizar a página e ver o console, será possível ver a saída com os valores das variáveis. Como disse, é possível ver o valor de uma variável pelo console, apenas digite o nome da variável e aperte enter. Resultado:
+{: style="text-align: justify"}
+
+<kbd>
+  <img src="imagens/console-variaveis.png" width="100%">
+</kbd>
+
+Para se concatenar variáveis, existem dois métodos:
+
+```javascript
+console.log(x + " " + y);
+console.log(`${x} ${y}`);
+```
+
+### Objetos e Arrays
+Objetos são tipos de variáveis que podem armazenar vários tipos de dados, que podem ser modificados, como o seguinte exemplo:
+{: style="text-align: justify"}
+
+```javascript
+const pessoa = {
+  nome: 'Terry',
+  sobrenome: 'Martin',
+  idade: 38
+};
+
+console.log(`Olá ${pessoa.nome} ${pessoa.sobrenome}, sua idade é de ${pessoa.idade}`);
+
+pessoa.idade = 39;
+
+console.log(`Olá ${pessoa.nome}, sua nova idade é ${pessoa.idade}`);
+```
+
+Arrays são listas, que começam com a posição zero. Para se acessar o valor de um array se usa o `array[posicao]` e para adicionar novos valores aos arrays, é utilizado a função `.push(valorDaVariavel)`. Exemplo de código:
+{: style="text-align: justify"}
+
+```javascript
+const alfabeto = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(`Segunda letra do alfabeto: ${alfabeto[1]}`);
+
+console.log('Array do Alfabeto:');
+console.log(alfabeto);
+
+alfabeto.push('f');
+
+console.log('Array do Alfabeto depois do Push:');
+console.log(alfabeto);
+```
+
+Tente declarar novas variáveis, objetos e arrays e procurar e utilizar novas funções de Arrays por meio da documentação do Javascript, como de remover o último elemento da lista ou cortar parte do array:
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array.
+{: style="text-align: justify"}
