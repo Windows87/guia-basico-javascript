@@ -36,7 +36,9 @@ O guia aborda os seguintes assuntos:
 		- [Modificar todos os Elementos de uma Classe ou Tag](#modificar-todos-os-elementos-de-uma-classe-ou-tag)
 		- [Modificar outros Valores do Elemento](#modificar-outros-valores-do-elemento)
 	- [Criar Elementos](#criar-elementos)
-- setInterval e setTimeout
+- [setInterval e setTimeout](#setinterval-e-settimeout)
+	- [setInterval](#setinterval)
+	- [setTimeout](#settimeout)
 - Eventos
 - Requisições HTTP (Ajax)
 - LocalStorage
@@ -483,3 +485,53 @@ Resultado:
 <kbd>
   <img src="imagens/criacao-elemento.png" width="100%">
 </kbd>
+
+## setInterval e setTimeout
+Essas duas funções são funções de tempo. O setInterval é uma função que executa a cada x milisegundos (1s = 1000ms) até você parar esse código. já o setTimeout espera x milisegundos e executa.
+{: style="text-align: justify"}
+
+### setInterval
+A função abaixo modifica o elemento a cada segundo:
+{: style="text-align: justify"}
+
+**HTML**:
+```html
+<!----
+  Resto do Código HTML
+----->
+<p id="elemento">0</p>
+<!----
+  Resto do Código HTML
+----->
+```
+
+**Javascript**:
+```javascript
+let i = 1;
+
+function modificarElemento() {
+  const elemento = document.querySelector('#elemento');
+  novoElemento.innerText = i;
+  i++;
+}
+
+setInterval(modificarElemento, 1000);
+```
+
+### setTimeout
+A função abaixo cria um elemento depois de cinco segundos:
+{: style="text-align: justify"}
+
+```javascript
+function criarElemento() {
+  const novoElemento = document.createElement('p');
+  const body = document.querySelector('body');
+
+  novoElemento.innerText = 'Elemento';
+  body.appendChild(novoElemento);
+
+  i++;
+}
+
+setTimeout(criarElemento, 5000);
+```
