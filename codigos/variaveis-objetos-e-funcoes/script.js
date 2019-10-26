@@ -38,3 +38,26 @@ alfabeto.push('f');
 
 console.log('Array do Alfabeto depois do Push:');
 console.log(alfabeto);
+
+// Funções
+function funcao() {
+  console.log('olá');
+}
+
+const segundaFuncao = () => {
+  console.log('olá');
+}
+
+function funcaoComParametro(nome) {
+  console.log(`olá ${nome}`);
+}
+
+funcao();
+segundaFuncao();
+funcaoComParametro('Terry');
+
+function soma(x, y) {
+  return x + y;
+}
+
+console.log(soma(10, 5)); // 15

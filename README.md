@@ -23,6 +23,7 @@ O guia aborda os seguintes assuntos:
 - [Variáveis, Objetos e Funções](#variaveis-objetos-e-funcoes)
 	- [Variáveis](#variaveis)
 	- [Objetos e Arrays](#objetos-e-arrays)
+	- [Funções](#funcoes)
 - [If, else, for, while e forEach](#if-else-for-while-foreach)
 	- [If e Else](#if-e-else)
 		- [Operadores de Comparação](#operadores-de-comparacao)
@@ -161,6 +162,45 @@ alfabeto.push('f');
 console.log('Array do Alfabeto depois do Push:');
 console.log(alfabeto);
 ```
+
+### Funções
+Diferente do C++ ou Java, não é necessário declarar o retorno. Existem dois métodos de declarar funções:
+{: style="text-align: justify"}
+
+```javascript
+function funcao() {
+  console.log('olá');
+}
+
+const segundaFuncao = () => {
+  console.log('olá');
+}
+
+function funcaoComParametro(nome) {
+  console.log(`olá ${nome}`);
+}
+```
+
+E para executar a função, coloque o nome da função acompanhada de `()` e se a função necessitar parâmetros, passe os valores divididos por vírgula, igual em outras linguagens:
+{: style="text-align: justify"}
+
+```javascript
+funcao();
+segundaFuncao();
+funcaoComParametro('Terry');
+```
+
+Para retornar valores, utilize o comando `return`, exemplo:
+{: style="text-align: justify"}
+
+```javascript
+function soma(x, y) {
+  return x + y;
+}
+
+console.log(soma(10, 5)); // 15
+```
+
 
 Tente declarar novas variáveis, objetos e arrays e procurar e utilizar novas funções de Arrays por meio da documentação do Javascript, como de remover o último elemento da lista ou cortar parte do array:
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array.
