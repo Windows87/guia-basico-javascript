@@ -1,22 +1,18 @@
-<div style="text-align: center;">
+<p align="center">
   <img src="imagens/javascript-logo.png" width="40%">
-</div>
+</p>
 
 # Guia Básico de Javascript
 
 ## Introdução
 Javascript é uma linguagem de programação que primariamente é usada em navegadores, mas pode ser utilizada em outros ambientes, como em servidores com o NodeJS, em aplicações mobile com o Ionic ou React-Native e em aplicações para desktop com Electron ou Nwjs.
-{: style="text-align: justify"}
 
 O Javascript é uma linguagem simples, com uma sintaxe parecida com outras linguagens, como o C++. A sua versão mais atual, ES2015 ou ES6+ traz novas features que tornam o Javascript mais simples, independente de frameworks como o jQuery e mais fácil para desenvolver aplicações mais complexas. O ES2015 apresenta classes, métodos de tratar funções assíncronas (async e await), Ajax nativo e facilitado (fetch) e outras features.
-{: style="text-align: justify"}
 
 O resultado final de cada tópico estará dentro da pasta códigos.
-{: style="text-align: justify"}
 
 ## Conteúdo
 O guia aborda os seguintes assuntos:
-{: style="text-align: justify"}
 
 - [Utilizar Javascript no HTML](#utilizar-javascript-no-html)
 - [Console e Debug](#console-e-debug)
@@ -44,12 +40,10 @@ O guia aborda os seguintes assuntos:
 	- [onSubmit](#onsubmit)
 - [Requisições HTTP (Ajax)](#requisicoes-http-ajax)
 - [O que é Node, React, Electron e Outros](#o-que-e-node-react-electron-e-outros)
-{: style="text-align: justify"}
 
 ## Utilizar Javascript no HTML
 
 Para importar o Javascript é necessário utilizar a tag `<script>`, normalmente é utilizado no fim da tag `<body>`. Para importar é necessário do parâmetro `src` linkando o arquivo Javascript, como no exemplo:
-{: style="text-align: justify"}
 
 ```html
 <body>
@@ -61,7 +55,6 @@ Para importar o Javascript é necessário utilizar a tag `<script>`, normalmente
 ```
 
 Também é possível utilizar códigos javascript sem a necessidade de importar um arquivo javascript dentro do HTML utilizando os códigos dentro da tag `<script>`:
-{: style="text-align: justify"}
 
 ```html
 <body>
@@ -76,34 +69,28 @@ Também é possível utilizar códigos javascript sem a necessidade de importar 
 ```
 
 O recomendado é criar um arquivo javascript separado do arquivo HTML para manter uma boa organização do código. Além disso, é recomendado também criar uma pasta para colocar todos os arquivos de scripts javascript.
-{: style="text-align: justify"}
 
 ## Console e Debug
 Dentro do arquivo javascript linkado no HTML, insira esse código:
-{: style="text-align: justify"}
 
 ```javascript
 console.log('Hello World');
 ```
 
 Se atualizar a página HTML, verá que não aconteceu absolutamente nada. Mas se clicar com o botão direito do mouse e clicar em "Inspecionar" ou utilizar o atalho `Ctrl + Shift + I` e clicar na aba do console, irá ver uma mensagem:
-{: style="text-align: justify"} 
 
 <kbd>
   <img src="imagens/console.png" width="100%">
 </kbd>
 
 Esse código mostra uma mensagem no console. Isso pode ser útil para tentar resolver algum bug do código. E o console também é extremamente útil para esse propósito, nele você pode ver valores de variáveis, elementos HTML e utilizar códigos de Javascript.
-{: style="text-align: justify"} 
 
 Tente trocar o texto do console ou adicionar mais textos para visualizar dentro do console.
-{: style="text-align: justify"} 
 
 ## Variáveis, Objetos e Funções
 
 ### Variáveis
 Diferente de outras linguagens, o Javascript apresenta apenas dois tipos de variáveis, o tipo `const`, que é uma variável constante, ou seja, seu valor não pode mudar, e o tipo `let`, que é uma variável que o valor pode ser modificado. Não é necessário escrever o tipo da variável (string, int) como no C++ ou Java. Exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 const x = "O valor é de";
@@ -118,7 +105,6 @@ console.log(y);
 ```
 
 Ao atualizar a página e ver o console, será possível ver a saída com os valores das variáveis. Como disse, é possível ver o valor de uma variável pelo console, apenas digite o nome da variável e aperte enter. Resultado:
-{: style="text-align: justify"}
 
 <kbd>
   <img src="imagens/console-variaveis.png" width="100%">
@@ -133,7 +119,6 @@ console.log(`${x} ${y}`);
 
 ### Objetos e Arrays
 Objetos são tipos de variáveis que podem armazenar vários tipos de dados, que podem ser modificados, como o seguinte exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 const pessoa = {
@@ -150,7 +135,6 @@ console.log(`Olá ${pessoa.nome}, sua nova idade é ${pessoa.idade}`);
 ```
 
 Arrays são listas, que começam com a posição zero. Para se acessar o valor de um array se usa o `array[posicao]` e para adicionar novos valores aos arrays, é utilizado a função `.push(valorDaVariavel)`. Exemplo de código:
-{: style="text-align: justify"}
 
 ```javascript
 const alfabeto = ['a', 'b', 'c', 'd', 'e'];
@@ -168,7 +152,6 @@ console.log(alfabeto);
 
 ### Funções
 Diferente do C++ ou Java, não é necessário declarar o retorno. Existem dois métodos de declarar funções:
-{: style="text-align: justify"}
 
 ```javascript
 function funcao() {
@@ -185,7 +168,6 @@ function funcaoComParametro(nome) {
 ```
 
 E para executar a função, coloque o nome da função acompanhada de `()` e se a função necessitar parâmetros, passe os valores divididos por vírgula, igual em outras linguagens:
-{: style="text-align: justify"}
 
 ```javascript
 funcao();
@@ -194,7 +176,6 @@ funcaoComParametro('Terry');
 ```
 
 Para retornar valores, utilize o comando `return`, exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 function soma(x, y) {
@@ -207,15 +188,12 @@ console.log(soma(10, 5)); // 15
 
 Tente declarar novas variáveis, objetos e arrays e procurar e utilizar novas funções de Arrays por meio da documentação do Javascript, como de remover o último elemento da lista ou cortar parte do array:
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array.
-{: style="text-align: justify"}
 
 ## If, else, for, while e forEach
 Os comandos de seleção e laços de repetição do Javascript são semelhantes aos de outras linguagens, como C/C++ e Java. 
-{: style="text-align: justify"}
 
 ### If e Else
 O `if` e `else`, igual ao C++, quando apresenta apenas uma linha, não é necessário utilizar das chaves, como no exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 const x = 10;
@@ -231,7 +209,6 @@ else
 O `else if` no código é o mesmo que o `else if` do C++. se o primeiro `if` estiver errado, seguirá até os outros `else if`s até um funcionar e parar a seleção. Se nenhum funcionar, entrará no `else`.
 
 Mas quando é necessário um bloco de código, é necessário utilizar chaves, como no exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 const senha = 'abc123';
@@ -246,7 +223,6 @@ if(senha === 'abc123') {
 
 #### Operadores de Comparação
 Segue uma tabela de operadores de comparação, como igual, maior ou igual igual aos do C++.
-{: style="text-align: justify"}
 
 | Operador     | Nome                   |
 |--------------|------------------------|
@@ -260,7 +236,6 @@ Segue uma tabela de operadores de comparação, como igual, maior ou igual igual
 | `<=`         | Menor ou igual que     |
 
 A diferença do Igual e Igual Estritamente é que o Igual não compara tipos, ou seja, `3 == "3"` dá `true`, mas o Igual Estritamente daria `false`, mas daria `true` com a comparação `3 === 3`. Exemplos:
-{: style="text-align: justify"}
 
 ```javascript
 const a = 10;
@@ -280,7 +255,6 @@ console.log(a >= b); // true
 
 #### Operadores Lógicos
 Segue uma tabela de operadores lógicos, iguais ao do C++.
-{: style="text-align: justify"}
 
 | Operador     | Nome     |
 |--------------|----------|
@@ -289,7 +263,6 @@ Segue uma tabela de operadores lógicos, iguais ao do C++.
 | `!`          | inversor |
 
 Exemplos:
-{: style="text-align: justify"}
 
 ```javascript
 const y = 10;
@@ -308,7 +281,6 @@ console.log(!!p); // true
 
 ### For, While e ForEach
 Os laços de repetição são também iguais do C++, o novo é o `forEach`, que é uma função nova dos arrays, junto com o `map` e `filter`. Exemplos:
-{: style="text-align: justify"}
 
 ```javascript
 for(let i = 0; i < 10; i++)
@@ -328,23 +300,18 @@ array.forEach(letra => {
 ```
 
 O `for` e o `while` tem saídas iguais, dando um output de 0 a 9. O `forEach` imprime todos os valores do array no console.
-{: style="text-align: justify"}
 
 ## Manipulação do DOM
 Até agora foi passado apenas os fundamentos do Javascript. A parte interessante do Javascript é manipular o DOM, ou seja, manipular os elementos da página.
-{: style="text-align: justify"}
 
 Com o Javascript é possível modificar o texto e o HTML de elementos, modificar o estilo de um elemento, modificar o source de uma imagem, modificar as classes de um elemento ou criar um novo elemento pelo código. Ou seja, é possível modificar todas as propriedades da página.
-{: style="text-align: justify"}
 
 ### Modificar Elementos
 
 #### Modificar o Texto e o HTML
 Primeiramente, para modificar um elemento, é necessário selecionar o elemento que você quer modificar e guardar em uma variável. Utilizamos a função `document.querySelector()` para selecionar apenas um elemento utilizando seletores CSS. Por exemplo, para pegar um elemento com o id `elemento`, seria usado `document.querySelector('#elemento')`, mas se fosse uma classe, seria utilizado `document.querySelector('.elemento')`. Mas como classes podem ser usadas em mais de um elemento, o querySelector retornaria apenas o primeiro elemento encontrado com essa classe.
-{: style="text-align: justify"}
 
 Para modificar o texto, se utiliza a propriedade `innerText` do elemento. Exemplo de modificação de texto de uma `div`:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -365,7 +332,6 @@ elemento.innerText = 'Hello World!';
 ```
 
 Como pode ser visto, apareceu a palavra "Hello World" na página. Mas caso quisessemos mostrar o "Hello World" como elemento `h1`, podemos utilizar o `innerHTML` para modificar todo o HTML dentro do elemento.
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -386,15 +352,12 @@ elemento2.innerHTML = '<h1>Hello World!</h1>';
 ```
 
 **Resultado**:
-{: style="text-align: justify"}
-
 <kbd>
   <img src="imagens/manipulacao-helloworld.png" width="100%">
 </kbd>
 
 #### Modificar o Estilo do Elemento
 Para modificar o estilo, você pode utilizar a propriedade `elemento.style['nomeDaPropriedadeCSS'] = 'valorDaPrpriedade';`. Para modificar a cor de um parágrafo, seria usado esses códigos:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -416,18 +379,14 @@ elemento3.style['color'] = 'red';
 ```
 
 **Resultado**:
-{: style="text-align: justify"}
-
 <kbd>
   <img src="imagens/manipulacao-css.png" width="100%">
 </kbd>
 
 Também é possível adicionar uma classe utilizando a função `elemento.classList.add('nomeDaClasse');` para editar o CSS.
-{: style="text-align: justify"}
 
 #### Modificar todos os Elementos de uma Classe ou Tag
 A função `document.querySelectorAll('nomeDaClasseOuTag')` seleciona todos os elementos de uma classe ou tag e retorna um array, então, para modificar todos os elementos é necessário modificar os elementos um por um. Por isso pode ser utilizado o `forEach` mostrado acima. Exemplo:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -454,19 +413,15 @@ elementos.forEach(elemento => {
 ```
 
 **Resultado**:
-{: style="text-align: justify"}
-
 <kbd>
   <img src="imagens/manipulacao-elementos.png" width="100%">
 </kbd>
 
 #### Modificar outros Valores do Elemento
 Como dito, é possível modificar outros valores do elemento, como a source de uma imagem: `img.src = 'linkDaImagem'` ou o valor de um input: `input.value = 'valorDoInput'`.
-{: style="text-align: justify"}
 
 ### Criar Elementos
 Mas modificar elementos é muito limitado. Por isso, é possível criar elementos por meio do javascript utilizando a função `novoElemento = document.createElement('tipoDeElemento')`, mas para o elemento aparecer na página é necessário adicionar dentro de um elemento pai com a função `elementoPai.appendChild(novoElemento)`. Exemplo:
-{: style="text-align: justify"}
 
 ```javascript
 const novoElemento = document.createElement('div');
@@ -478,22 +433,17 @@ body.appendChild(novoElemento);
 ```
 
 O exemplo mostra a criação de um novo elemento, a seleção do elemento pai, que no caso é o elemento `body`, a modificação do texto do novo elemento e a adição dele no `body`. Todos os elementos podem serem criados, como `img` e `p`.
-{: style="text-align: justify"}
 
-Resultado:
-{: style="text-align: justify"}
-
+**Resultado:**
 <kbd>
   <img src="imagens/criacao-elemento.png" width="100%">
 </kbd>
 
 ## setInterval e setTimeout
 Essas duas funções são funções de tempo. O setInterval é uma função que executa a cada x milisegundos (1s = 1000ms) até você parar esse código. já o setTimeout espera x milisegundos e executa.
-{: style="text-align: justify"}
 
 ### setInterval
 A função abaixo modifica o elemento a cada segundo:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -521,7 +471,6 @@ setInterval(modificarElemento, 1000);
 
 ### setTimeout
 A função abaixo cria um elemento depois de cinco segundos:
-{: style="text-align: justify"}
 
 ```javascript
 function criarElemento() {
@@ -539,11 +488,9 @@ setTimeout(criarElemento, 5000);
 
 ## Eventos
 Eventos são funções que são executadas ao por exemplo, clicar em um elemento, submeter um formulário, entre outros. Para declarar um evento, é usada a função `elemento.addEventListener('evento', funcaoQueOcorrera)`;
-{: style="text-align: justify"}
 
 ### onClick
 O onClick é um evento que pode ser utilizado em todos os elementos. Ele é executado quando o usuário clica no elemento. Exemplo de função de onClick:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -569,7 +516,6 @@ botao.addEventListener('click', abrirAlerta);
 
 ### onSubmit
 O onSubmit é um evento que pode ser utilizado em formulários, que quando esse formulário é submetido, o evento é disparado. Para a página não dar um refresh, é necessário pegar a variável `event` na função e usar a função `event.preventDefault()`. Exemplo:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -599,17 +545,13 @@ form.addEventListener('submit', mostrarTexto);
 ```
 
 O código acima, ao submeter o formuĺário (clicando no botão de submeter ou dando enter no input), irá mostrar o valor do input.
-{: style="text-align: justify"}
 
 ## Requisições HTTP (Ajax)
 Requisição HTTP é fazer uma chamada a um website e pode receber um valor em texto ou em forma de um objeto (json). Iremos usar uma API, que é um website que você envia por exemplo, uma informação para o website e ele retornará informações brutas.
-{: style="text-align: justify"}
 
 Será usada uma API de CEP gratuita (https://postmon.com.br/) que será passada um CEP pela url e será retornada informações sobre esse CEP. Para descobrir como se deve usar uma API, deve-se ler a documentação da API.
-{: style="text-align: justify"}
 
 A função usada para requisição será o `fetch`, que deve estar dentro de uma função assíncrona, que deve ter o comando `async` na frente da `function` e `await` na frente da função `fetch`. Códigos de uma simples aplicação fazendo a requisição obtendo os dados do CEP, mostrando os dados no console e o nome da cidade na página:
-{: style="text-align: justify"}
 
 **HTML**:
 ```html
@@ -651,55 +593,42 @@ form.addEventListener('submit', procurarCEP);
 ```
 
 Como pode ser visto, utilizou os comandos `try` e `catch`, ele é utilizado caso o usuário não tenha internet ou dê um erro, irá parar o código do `try` e ir pro bloco de código do `catch`. Outra coisa que pode ser observada é o `chamadaHttp.json()`, nela, é retornada um objeto, caso fosse `chamadaHttp.text()`, seria retornado o valor em string.
-{: style="text-align: justify"}
 
 ## O que é Node, React, Electron e Outros
-<img src="imagens/nodejs.png" width="60%">
-{: style="text-align: center"}
+<p align="center">
+  <img src="imagens/nodejs.png" width="60%">
+</p>
 
 Node, React, Vue, Angular, Electron e NWjs são tecnologias que utilizam da linguagem Javascript.
-{: style="text-align: justify"}
 
 Node é o Javascript para um lugar fora do Browser. Com isso, ele pode ser usado para vários objetivos, como servidor, criar pequenos programas para console ou automatizar tarefas, como postar em redes sociais de tempos em tempos. Existem diversos módulos para diferentes propósitos. Você pode procurar esses módulos no site do <a href="https://www.npmjs.com/">npm</a>.
-{: style="text-align: justify"}
 
 React, Vue e Angular são bibliotecas e frameworks (no caso do Angular) ppara desenvolver aplicações web SPA (Single Page Applications, páginas que não precisam ir para outra url do site, já que todo site está em apenas uma página). React-Native é uma versão do React para mobile, que gera código para Android e iOS.
-{: style="text-align: justify"}
 
 Electron e NWjs são frameworks para criar aplicações desktop para Windows, Linux e Mac utilizando de HTML, CSS, Javascript e NodeJS. É possível criar aplicações grandes com essas duas tecnologias, como sistemas com banco de dados locais ou online.
-{: style="text-align: justify"}
 
 Com mais de um milhão de módulos, o npm apresenta módulos específicos para cada coisa além das bibliotecas citadas acima. Por exemplo, é possível programar um Arduino, IoT, realizar testes de software, jogos e utilizar para diversos objetivos. Mesmo o Javascript sendo quase "onipotente", ele pode ser não ser uma boa opção para CMS que devem ser desenvolvidos rapidamente ou com pouco orçamento, para criação de jogos, para programas que necessitam de uma performance e por aí vai, ou seja, ele é muito bom, mas em alguns casos, linguagens como PHP, C#, Java ou C++ são melhores opções.
-{: style="text-align: justify"}
 
 **Principais Bibliotecas para Frontend**
-{: style="text-align: justify"}
 
 - <a href="https://reactjs.org/">ReactJS</a>
 - <a href="https://vuejs.org/">VueJS</a>
 - <a href="https://angular.io/">Angular</a>
-{: style="text-align: justify"}
 
 **Principais Bibliotecas para Backend**
-{: style="text-align: justify"}
 
 - <a href="https://expressjs.com/">Express</a>
 - <a href="https://adonisjs.com/">AdonisJS</a>
 - <a href="https://mongoosejs.com/">Mongoose (se utilizar MongoDB, que é algo comum)</a>
 - Json Web Token (Autenticação)
 - OAuth (Autenticação)
-{: style="text-align: justify"}
 
 **Principais Bibliotecas para Mobile**
-{: style="text-align: justify"}
 
 - <a href="https://facebook.github.io/react-native/">React-Native</a>
 - <a href="https://ionicframework.com/">Ionic (Híbrido)</a>
-{: style="text-align: justify"}
 
 **Princpais Bibiliotecas para Desktop**
-{: style="text-align: justify"}
 
 - <a href="https://electronjs.org/">Electron</a>
 - <a href="https://nwjs.io/">NWjs</a>
-{: style="text-align: justify"}
