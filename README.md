@@ -43,7 +43,7 @@ O guia aborda os seguintes assuntos:
 	- [onClick](#onclick)
 	- [onSubmit](#onsubmit)
 - [Requisições HTTP (Ajax)](#requisicoes-http-ajax)
-- O que é Node, React, Electron e Outros
+- [O que é Node, React, Electron e Outros](#o-que-e-node-react-electron-e-outros)
 {: style="text-align: justify"}
 
 ## Utilizar Javascript no HTML
@@ -651,4 +651,55 @@ form.addEventListener('submit', procurarCEP);
 ```
 
 Como pode ser visto, utilizou os comandos `try` e `catch`, ele é utilizado caso o usuário não tenha internet ou dê um erro, irá parar o código do `try` e ir pro bloco de código do `catch`. Outra coisa que pode ser observada é o `chamadaHttp.json()`, nela, é retornada um objeto, caso fosse `chamadaHttp.text()`, seria retornado o valor em string.
+{: style="text-align: justify"}
+
+## O que é Node, React, Electron e Outros
+<img src="imagens/nodejs.png" width="60%">
+{: style="text-align: center"}
+
+Node, React, Vue, Angular, Electron e NWjs são tecnologias que utilizam da linguagem Javascript.
+{: style="text-align: justify"}
+
+Node é o Javascript para um lugar fora do Browser. Com isso, ele pode ser usado para vários objetivos, como servidor, criar pequenos programas para console ou automatizar tarefas, como postar em redes sociais de tempos em tempos. Existem diversos módulos para diferentes propósitos. Você pode procurar esses módulos no site do <a href="https://www.npmjs.com/">npm</a>.
+{: style="text-align: justify"}
+
+React, Vue e Angular são bibliotecas e frameworks (no caso do Angular) ppara desenvolver aplicações web SPA (Single Page Applications, páginas que não precisam ir para outra url do site, já que todo site está em apenas uma página). React-Native é uma versão do React para mobile, que gera código para Android e iOS.
+{: style="text-align: justify"}
+
+Electron e NWjs são frameworks para criar aplicações desktop para Windows, Linux e Mac utilizando de HTML, CSS, Javascript e NodeJS. É possível criar aplicações grandes com essas duas tecnologias, como sistemas com banco de dados locais ou online.
+{: style="text-align: justify"}
+
+Com mais de um milhão de módulos, o npm apresenta módulos específicos para cada coisa além das bibliotecas citadas acima. Por exemplo, é possível programar um Arduino, IoT, realizar testes de software, jogos e utilizar para diversos objetivos. Mesmo o Javascript sendo quase "onipotente", ele pode ser não ser uma boa opção para CMS que devem ser desenvolvidos rapidamente ou com pouco orçamento, para criação de jogos, para programas que necessitam de uma performance e por aí vai, ou seja, ele é muito bom, mas em alguns casos, linguagens como PHP, C#, Java ou C++ são melhores opções.
+{: style="text-align: justify"}
+
+**Principais Bibliotecas para Frontend**
+{: style="text-align: justify"}
+
+- <a href="https://reactjs.org/">ReactJS</a>
+- <a href="https://vuejs.org/">VueJS</a>
+- <a href="https://angular.io/">Angular</a>
+{: style="text-align: justify"}
+
+**Principais Bibliotecas para Backend**
+{: style="text-align: justify"}
+
+- <a href="https://expressjs.com/">Express</a>
+- <a href="https://adonisjs.com/">AdonisJS</a>
+- <a href="https://mongoosejs.com/">Mongoose (se utilizar MongoDB, que é algo comum)</a>
+- Json Web Token (Autenticação)
+- OAuth (Autenticação)
+{: style="text-align: justify"}
+
+**Principais Bibliotecas para Mobile**
+{: style="text-align: justify"}
+
+- <a href="https://facebook.github.io/react-native/">React-Native</a>
+- <a href="https://ionicframework.com/">Ionic (Híbrido)</a>
+{: style="text-align: justify"}
+
+**Princpais Bibiliotecas para Desktop**
+{: style="text-align: justify"}
+
+- <a href="https://electronjs.org/">Electron</a>
+- <a href="https://nwjs.io/">NWjs</a>
 {: style="text-align: justify"}
