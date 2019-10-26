@@ -16,16 +16,16 @@ O guia aborda os seguintes assuntos:
 
 - [Utilizar Javascript no HTML](#utilizar-javascript-no-html)
 - [Console e Debug](#console-e-debug)
-- [Variáveis, Objetos e Funções](#variaveis-objetos-e-funcoes)
-	- [Variáveis](#variaveis)
+- [Variáveis, Objetos e Funções](#variáveis-objetos-e-funções)
+	- [Variáveis](#variáveis)
 	- [Objetos e Arrays](#objetos-e-arrays)
-	- [Funções](#funcoes)
+	- [Funções](#funções)
 - [If, else, for, while e forEach](#if-else-for-while-foreach)
 	- [If e Else](#if-e-else)
-		- [Operadores de Comparação](#operadores-de-comparacao)
-		- [Operadores Lógicos](#operadores-logicos)
+		- [Operadores de Comparação](#operadores-de-comparação)
+		- [Operadores Lógicos](#operadores-lógicos)
 	- [For, While e forEach](#for-while-e-foreach)
-- [Manipulação do DOM](#manipulacao-do-dom)
+- [Manipulação do DOM](#manipulação-do-dom)
 	- [Modificar Elementos](#modificar-elementos)
 		- [Modificar o Texto e o HTML](#modificar-o-texto-e-o-html)
 		- [Modificar o Estilo do Elemento](#modificar-o-estilo-do-elemento)
@@ -38,8 +38,8 @@ O guia aborda os seguintes assuntos:
 - [Eventos](#eventos)
 	- [onClick](#onclick)
 	- [onSubmit](#onsubmit)
-- [Requisições HTTP (Ajax)](#requisicoes-http-ajax)
-- [O que é Node, React, Electron e Outros](#o-que-e-node-react-electron-e-outros)
+- [Requisições HTTP (Ajax)](#requisições-http-ajax)
+- [O que é Node, React, Electron e Outros](#o-que-é-node-react-electron-e-outros)
 
 ## Utilizar Javascript no HTML
 
