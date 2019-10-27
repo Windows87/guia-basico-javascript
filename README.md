@@ -40,6 +40,9 @@ O guia aborda os seguintes assuntos:
 	- [onSubmit](#onsubmit)
 - [Requisições HTTP (Ajax)](#requisições-http-ajax)
 - [O que é Node, React, Electron e Outros](#o-que-é-node-react-electron-e-outros)
+- [Links Finais](#links-finais)
+	- [Atividade](#atividade)
+	- [Links de Estudo](#links-de-estudo)
 
 ## Utilizar Javascript no HTML
 
@@ -47,9 +50,9 @@ Para importar o Javascript é necessário utilizar a tag `<script>`, normalmente
 
 ```html
 <body>
-  <!-----
+  <!---
     Resto do Código HTML
-  ------>
+  ---->
   <script type="text/javascript" src="script.js"></script>
 </body>
 ```
@@ -58,9 +61,9 @@ Também é possível utilizar códigos javascript sem a necessidade de importar 
 
 ```html
 <body>
-  <!-----
+  <!---
     Resto do Código HTML
-  ------>
+  ---->
   <script type="text/javascript">
     // Código Javascript
     // Isso é um comentário
@@ -315,14 +318,14 @@ Para modificar o texto, se utiliza a propriedade `innerText` do elemento. Exempl
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <div id="elemento">
 </div>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -335,14 +338,14 @@ Como pode ser visto, apareceu a palavra "Hello World" na página. Mas caso quise
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <div id="elemento-2">
 </div>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -361,15 +364,15 @@ Para modificar o estilo, você pode utilizar a propriedade `elemento.style['nome
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <p id="elemento-3">
   lorem ipsum dolor sit amet
 </p>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -390,17 +393,17 @@ A função `document.querySelectorAll('nomeDaClasseOuTag')` seleciona todos os e
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <p class="classe">a</p>
 <p class="classe">b</p>
 <p class="classe">c</p>
 <p class="classe">d</p>
 <p class="classe">e</p>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -447,13 +450,13 @@ A função abaixo modifica o elemento a cada segundo:
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <p id="elemento">0</p>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -494,9 +497,9 @@ O onClick é um evento que pode ser utilizado em todos os elementos. Ele é exec
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <button id="botao">Clique Aqui</button>
 <!----
   Resto do Código HTML
@@ -519,9 +522,9 @@ O onSubmit é um evento que pode ser utilizado em formulários, que quando esse 
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <form id="formulario">
   <input type="text" id="texto">
   <input type="submit" value="Submeter">
@@ -555,18 +558,18 @@ A função usada para requisição será o `fetch`, que deve estar dentro de uma
 
 **HTML**:
 ```html
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 <form id="formulario">
   <input type="text" id="cep">
   <input type="submit" value="Procurar">
 </form>
 
 <p id="cidade"></p>
-<!----
+<!---
   Resto do Código HTML
------>
+--->
 ```
 
 **Javascript**:
@@ -632,3 +635,18 @@ Com mais de um milhão de módulos, o npm apresenta módulos específicos para c
 
 - <a href="https://electronjs.org/">Electron</a>
 - <a href="https://nwjs.io/">NWjs</a>
+
+## Links Finais
+### Atividade
+Caso quiser testar seu conhecimento em Javascript, tente fazer a atividade da Pokédex que usa todos os conteúdos passados no guia no <a href="https://github.com/Windows87/seminfo-javascript-moderno">seguinte repositório</a>.
+
+### Links de Estudo
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript - Documentação do JavaScript <br>
+https://rocketseat.com.br/starter/curso-gratuito-javascript - Curso Gratuito de JavaScript <br>
+https://rocketseat.com.br/starter/curso-gratuito-javascript-es6 - Curso Gratuito de ES6+ (JS Moderno) <br>
+https://rocketseat.com.br/starter/curso-gratuito-reactjs - Curso Gratuito de ReactJS <br>
+https://rocketseat.com.br/starter/curso-gratuito-nodejs - Curso Gratuito de NodeJS <br>
+https://rocketseat.com.br/starter/curso-gratuito-react-native - Curso Gratuito de React-Native <br>
+https://www.youtube.com/watch?v=9w3o9NHXqu0&list=PLMdYygf53DP5Sc6yFYs6ZmjsuuA2fu0TK - Código Limpo em JavaScript <br>
+https://medium.com/@matheusml/o-guia-do-es6-tudo-que-voc%C3%AA-precisa-saber-8c287876325f - JS Antigo x JS Moderno <br>
+http://www.enrique7mc.com/2016/05/lista-apis-publicas/ - Lista de APIs Públicas <br>
